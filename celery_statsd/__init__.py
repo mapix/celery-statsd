@@ -20,7 +20,7 @@ def task_key(task):
     if isinstance(task, six.string_types):
         return '{}{}'.format(prefix, task)
     else:
-        return '{}{}'.format(prefix, task.name)
+        return '{}{}'.format(prefix, task.name.replace('.', '__'))
 
 
 def get_client(celery_app):
