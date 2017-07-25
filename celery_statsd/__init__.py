@@ -18,7 +18,7 @@ def task_key(task):
                      "CELERY_STATSD_PREFIX", "celery.")
 
     if isinstance(task, six.string_types):
-        return '{}{}'.format(prefix, task)
+        return '{}{}'.format(prefix, task.replace('.', '__'))
     else:
         return '{}{}'.format(prefix, task.name.replace('.', '__'))
 
